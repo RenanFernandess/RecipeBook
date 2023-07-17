@@ -1,0 +1,22 @@
+{
+  "name": "recipebook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "./packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./packages/**/*.{ts,tsx}"
+  },
+  "devDependencies": {
+    "@recipebook/eslint-config": "*",
+    "typescript": "^5.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenanFernandess/RecipeBook.git"
+  },
+  "author": "R",
+  "license": ""
+}
