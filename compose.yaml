@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  recipebook_backend:
+    build: ./packages/backend
+    container_name: backend
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./packages/backend:/usr/backend
+    environment:
+      - SERVER_PORT=8080
+      - DATABASE_URL="mysql://root:password@localhost:3306/recipebook"
+    depends_on:
+      - database
+    restart: on-failure
+
+  recipebook_database:
+    image: mysql:8.0
+    container_name: database
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=recipebook
+    restart: always

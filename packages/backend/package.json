@@ -6,11 +6,14 @@
     "build": "tsup src",
     "dev": "tsx ./src/server.ts",
     "dev:watch": "tsx watch ./src/server.ts",
+    "migrate": "prisma migrate dev --name init",
+    "migrate:dev": "prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsup src && node dist/server.js"
   },
   "license": "",
   "dependencies": {
+    "@prisma/client": "^5.0.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "prisma": "^5.0.0",

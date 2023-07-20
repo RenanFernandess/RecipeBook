@@ -6,6 +6,9 @@
     "./packages/*"
   ],
   "scripts": {
+    "compose": "docker-compose up -d",
+    "compose:down": "docker-compose down --remove-orphans",
+    "compose:db": "docker-compose up recipebook_database -d",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./packages/**/*.{ts,tsx}"
   },
@@ -17,6 +20,6 @@
     "type": "git",
     "url": "git+https://github.com/RenanFernandess/RecipeBook.git"
   },
-  "author": "R",
+  "author": "Renan Fernandes",
   "license": ""
 }

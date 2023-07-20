@@ -6,6 +6,104 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int        @id @default(autoincrement())
+  email       String     @unique
+  name        String
+  password    String
+  nacionality String
+  active      Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  deletedAt   DateTime?
+  recipes     Recipe[]
+  following   Follow[]   @relation("following")
+  followers   Follow[]   @relation("followers")
+  reactions   Reaction[]
+  Comment     Comment[]
+
+  @@map("users")
+}
+
+model Follow {
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  follower    User      @relation(fields: [followerId], references: [id], name: "followers")
+  followerId  Int
+  following   User      @relation(fields: [followingId], references: [id], name: "following")
+  followingId Int
+
+  @@id([followerId, followingId])
+  @@map("follows")
+}
+
+model Recipe {
+  id          Int          @id @default(autoincrement())
+  title       String
+  ingredients Ingredient[]
+  content     String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  deletedAt   DateTime?
+  user        User         @relation(fields: [userId], references: [id])
+  userId      Int
+  reactions   Reaction[]
+  Comment     Comment[]
+
+  @@map("recipes")
+}
+
+model Ingredient {
+  id        Int       @id @default(autoincrement())
+  name      String
+  quantity  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  recipe    Recipe    @relation(fields: [recipeId], references: [id])
+  recipeId  Int
+
+  @@map("ingredients")
+}
+
+model Reaction {
+  type           ReactionType @relation(fields: [reactionTypeId], references: [id])
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  deletedAt      DateTime?
+  recipe         Recipe       @relation(fields: [recipeId], references: [id])
+  recipeId       Int
+  user           User         @relation(fields: [userId], references: [id])
+  userId         Int
+  reactionTypeId Int
+
+  @@id([recipeId, userId])
+  @@map("reactions")
+}
+
+model ReactionType {
+  id       Int        @id @default(autoincrement())
+  name     String
+  Reaction Reaction[]
+
+  @@map("reaction_types")
+}
+
+model Comment {
+  content   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  recipe    Recipe    @relation(fields: [recipeId], references: [id])
+  recipeId  Int
+  user      User      @relation(fields: [userId], references: [id])
+  userId    Int
+
+  @@id([recipeId, userId])
+  @@map("comments")
 }
