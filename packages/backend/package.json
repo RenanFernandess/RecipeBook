@@ -6,8 +6,9 @@
     "build": "tsup src",
     "dev": "tsx ./src/server.ts",
     "dev:watch": "tsx watch ./src/server.ts",
-    "migrate": "prisma migrate dev --name init",
-    "migrate:dev": "prisma migrate dev",
+    "generate": "prisma generate",
+    "lint": "eslint . --ext .ts",
+    "migrate": "prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsup src && node dist/server.js"
   },
