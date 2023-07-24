@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "prisma.prisma",
+    "orta.vscode-jest",
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+    "bradlc.vscode-tailwindcss",
+    "burkeholland.simple-react-snippets",
+    "pkief.material-icon-theme",
+    "dsznajder.es7-react-js-snippets",
+    "ms-azuretools.vscode-docker"
+  ]
+}
