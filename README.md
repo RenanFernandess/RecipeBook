@@ -51,9 +51,17 @@
   #### Tests
   * <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" />
 
-  
- 
- 
+  #### Others
+  * <img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white" />
+  * <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" />
+  * <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" />
+
+  #### Prototype
+  * <a href="https://www.figma.com/" target="_blank"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" /></a>
+
+  #### Agile methodologies
+  * <img src="https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white" />
+
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 ## Começando
@@ -62,6 +70,34 @@
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
  
 ## Uso
+### Work space
+#### Scripts
+* Subir o docker compose
+
+      npm run compose
+
+* Encerra o docker compose
+
+      npm run compose:down
+
+* Subir apenas o banco de dados do docker compose
+
+      npm run compose:db
+
+* Rodar o lint em todos espaços de trabalho
+
+      npm run lint
+### Web
+#### Scripts
+*
+
+### Mobile
+#### Scripts
+*
+
+### Server
+#### Scripts
+*
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
