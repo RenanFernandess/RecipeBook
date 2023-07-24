@@ -114,6 +114,10 @@
 
       npm run generate
     > Para gerar o banco de dados atrasvez das migrations do prisma
+* Rodar o lint
+
+      npm run lint
+
 * Faz o migrate do schema do prisma
 
       npm run migrate
