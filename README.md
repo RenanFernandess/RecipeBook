@@ -80,7 +80,7 @@
 
       npm run compose:down
 
-* Subir apenas o banco de dados do docker compose
+* Subir apenas o banco de dados no docker compose
 
       npm run compose:db
 
@@ -97,7 +97,31 @@
 
 ### Server
 #### Scripts
-*
+* Fazer o build
+
+      npm run build
+
+* Iniciar o app para desenvolvedores
+
+      npm run dev
+
+* Iniciar o app para desenvolvedores no modo watch
+
+      npm run dev:watch
+
+    > Com o modo watch ativado toda vez que um arquivo for salvo o servidor reinicia
+* Gerar o banco de dados
+
+      npm run generate
+    > Para gerar o banco de dados atrasvez das migrations do prisma
+* Faz o migrate do schema do prisma
+
+      npm run migrate
+
+* Inicia o app
+
+      npm run start
+    > Este script irá fazer o build e depois iniciar o app através do arquivo de build
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
