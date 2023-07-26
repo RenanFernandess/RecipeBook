@@ -9,11 +9,17 @@
     "compose": "docker-compose up -d",
     "compose:down": "docker-compose down --remove-orphans",
     "compose:db": "docker-compose up recipebook_database -d",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./packages/**/*.{ts,tsx}"
+    "lint": "eslint ./packages/**/*.{ts,tsx}",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "test:coverage-watch": "jest --watchAll --coverage"
   },
   "devDependencies": {
     "@recipebook/eslint-config": "*",
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.1",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
   },
   "repository": {

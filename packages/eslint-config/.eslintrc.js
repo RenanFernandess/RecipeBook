@@ -8,29 +8,33 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'standard',
-    // 'standard-with-typescript',
     'plugin:react/recommended',
-    // 'next/core-web-vitals',
+    'plugin:react-hooks/recommended',
     'prettier',
     'plugin:prettier/recommended'
   ],
-  // "overrides": [
-  //     {
-  //         "env": {
-  //             "node": true
-  //         },
-  //         "files": [
-  //             ".eslintrc.{js,cjs}",
-  //             '*.js',
-  //             '*.jsx',
-  //             '*.ts',
-  //             '*.tsx'
-  //         ],
-  //         "parserOptions": {
-  //             "sourceType": "script",
-  //         }
-  //     }
-  // ],
+  env: {
+    'jest/globals': true
+  },
+  overrides: [
+    {
+      files: ['test/**'],
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
+      rules: {
+        'jest/prefer-expect-assertions': 'off',
+        'jest/no-disabled-tests': 'warn',
+        'jest/no-focused-tests': 'error',
+        'jest/no-identical-title': 'error',
+        'jest/prefer-to-have-length': 'warn',
+        'jest/valid-expect': 'error'
+      }
+    },
+    {
+      files: ['web/**'],
+      extends: ['next/core-web-vitals']
+    }
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -39,15 +43,21 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'react-hooks'
   ],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   },
   settings: {
     'import/resolver': {
       typescript: {}
     },
     react: {
+      version: 'detect'
+    },
+    jest: {
       version: 'detect'
     }
   }
