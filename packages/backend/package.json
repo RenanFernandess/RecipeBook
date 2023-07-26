@@ -8,6 +8,7 @@
     "dev:watch": "tsx watch ./src/server.ts",
     "generate": "prisma generate",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "migrate": "prisma migrate dev",
     "test": "jest",
     "test:watch": "jest --watchAll",

@@ -10,6 +10,7 @@
     "compose:down": "docker-compose down --remove-orphans",
     "compose:db": "docker-compose up recipebook_database -d",
     "lint": "eslint ./packages/**/*.{ts,tsx}",
+    "lint:fix": "eslint ./packages/**/*.{ts,tsx} --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
